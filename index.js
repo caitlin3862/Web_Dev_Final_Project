@@ -1,47 +1,36 @@
+let x = [];
+let y = [];
+
 async function getData() {
-    const response = await fetch("insert dataset");
-    const data = await response.text();
-    const rows = data.split("\n").slice(1);
-    let idx = 0;
+    const response = await fetch("index.csv");
+    const data = await response.text(); 
+    const rows = data.split("\n").slice(1)
+    var num = 0;
     rows.forEach((elem) => {
-            const row = elem.split(",");
-            const XX = row[0];
-            const XXX = row[1];
-
-            XXX[idx] = XX
-            XXX[idx] = XXX
-            idx++;
+        const row = elem.split(",");
+        x[num] = row[0];
+        y[num] = row[1];
     });
-}
 
-async function displayChart(chartId) {
-    getData()
-    const idName = chartId
-    const ctx = document.getElementById(idName);
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: XXX , 
-            datasets: [{
-                label: 'insert title',
-                data: XXX,
-                borderColor: 'find color',
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    ticks: {
-                        stepSize: 50
-                    }
-                },
-                
-            }
+function makeChart(){
+    const ct = document.getElementById('chart_one');
+    new Chart(ct, {
+    type: 'line',
+    data: {
+        labels: x,
+        datasets: [{
+        label: 'Data for Data',
+        data: y,
+        borderWidth: 4,
+        borderColor: 'rgb(254, 181, 197)'
+        }]
+    },
+    options: {
+        scales: {
+        y: {
+            beginAtZero: true
         }
+        }
+    }
     });
 }
-
-displayChart("chart_one")
-displayChart("chart_two")
