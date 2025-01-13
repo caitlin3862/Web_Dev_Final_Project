@@ -13,7 +13,7 @@ async function getData() {
     });
 
 function makeChart(){
-    const ct = document.getElementById('lineChart');
+    const ct = document.getElementById('chart_one');
     new Chart(ct, {
     type: 'line',
     data: {
