@@ -12,6 +12,7 @@ async function getData() {
         y[num] = row[1];
     });
 }
+
 function makeChart(){
     const ct = document.getElementById('chart_one');
     new Chart(ct, {
