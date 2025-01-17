@@ -1,37 +1,51 @@
 let x = [];
 let y = [];
 
-async function getData() {
-    const response = await fetch("index.csv");
-    const data = await response.text(); 
-    const rows = data.split("\n").slice(1)
-    var num = 0;
+async function getData(fileName) {
+    const response = await fetch(fileName);
+    const data = await response.text();
+    const rows = data.split("\n").slice(1);
+    let idx = 0;
     rows.forEach((elem) => {
-        const row = elem.split(",");
-        x[num] = row[0];
-        y[num] = row[1];
+        if (!(idx+1 == rows.length-1)){
+            const row = elem.split(",");
+            const schoolName = row[1];
+            const numOfCourses = row[2];
+
+            x[idx] = schoolName;
+            y[idx] = parseInt(numOfCourses);
+            idx++;
+        }
+    });
+
+}
+
+async function makeChart(idName, fileName) {
+    await getData(fileName);
+
+    const ct = document.getElementById(idName);
+    new Chart(ct, {
+        type: 'line',
+        data: {
+            labels: x,
+            datasets: [{
+                label: 'Data for Data',
+                data: y,
+                borderWidth: 1,
+                borderColor: 'rgb(254, 181, 197)'
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        stepSize: 2
+                    }
+                }
+            }
+        }
     });
 }
 
-function makeChart(){
-    const ct = document.getElementById('chart_one');
-    new Chart(ct, {
-    type: 'line',
-    data: {
-        labels: x,
-        datasets: [{
-        label: 'Data for Data',
-        data: y,
-        borderWidth: 4,
-        borderColor: 'rgb(254, 181, 197)'
-        }]
-    },
-    options: {
-        scales: {
-        y: {
-            beginAtZero: true
-        }
-        }
-    }
-    });
-}
+makeChart("chart_one", "2016-2017_CS_Reports.csv");

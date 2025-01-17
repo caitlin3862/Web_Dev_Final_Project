@@ -1,25 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Rubik+Iso&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=VT323&display=swap');
+
+body {
+    background-color: #F3CFC6;
+    font-family: "Rubik Iso", sans-serif;
+}
+
 h1 {
-    color: black;
-    font-size: 24px;
-}
-
-.graph-containers {
-    border: 1px solid black;
-}
-
-.chart {
-    border: 1px solid black;
-    padding: 20px;
+    color: #A95C68;
+    font-family: "Sour Gummy", serif;
+    font-size: 30px;
     text-align: center;
-}
-
-h1 {
-    font-size: 20px;
-    margin-bottom: 10px;
 }
 
 canvas {
     width: 100%;
     height: 300px;
     background-color: #f4f4f4;
+}
+
+div {
+    margin: 30px;
+}
+
+.graph-containers {
+    background-color: #FFF5EE;
+    border: 1px solid #A95C68;
+    margin-bottom: 20%;
+    margin-right: 20%;
+    margin-left: 20%;
+}
+
+.chart {
+    border: 2px solid #A95C68;
+    padding: 20px;
+    text-align: center;
+}
+
+#title {
+    margin-top: 10%;
+    font-size: 40px;
+    text-align: center;
+}
+
+nav {
+    background-color: #A95C68;
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-family: "Sour Gummy", serif;
+    font-size: 30px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
 }

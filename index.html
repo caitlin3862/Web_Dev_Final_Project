@@ -3,26 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
     <title>Charts</title>
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Browse</a></li>
+            <li><a href="personal.html">Create Your Own</a></li> 
+        </ul>
+    </nav>
+
+    <h1 id="title">Charts for different data sets!</h1>
     <div class="graph-containers">
-        <div class="first-graph">
+        <div class="chart" id="first-graph">
             <h1>Chart One</h1>
             <canvas id="chart_one"></canvas>
         </div>
-        <div class="second-graph">
+        <div class="chart" id="second-graph">
             <h1>Chart Two</h1>
             <canvas id="chart_two"></canvas>
         </div>
-        <div class="third-graph"></div>
+        <div class="chart" id="third-graph">
             <h1>Chart Three</h1>
             <canvas id="chart_three"></canvas>
         </div>
-        <div class="fourth-graph"></div>
+        <div class="chart" id="fourth-graph">
             <h1>Chart Four</h1>
             <canvas id="chart_four"></canvas>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
