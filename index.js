@@ -29,7 +29,7 @@ async function makeChart(idName, fileName) {
         data: {
             labels: x,
             datasets: [{
-                label: 'Data for Data',
+                label: 'Number of CS Courses',
                 data: y,
                 borderWidth: 1,
                 borderColor: 'rgb(254, 181, 197)'
