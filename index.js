@@ -1,7 +1,7 @@
 let x = [];
 let y = [];
 
-async function getData(fileName) {
+async function getData(fileName, num) {
     const response = await fetch(fileName);
     const data = await response.text();
     const rows = data.split("\n").slice(1);
@@ -10,7 +10,7 @@ async function getData(fileName) {
         if (!(idx+1 == rows.length-1)){
             const row = elem.split(",");
             const schoolName = row[1];
-            const numOfCourses = row[2];
+            const numOfCourses = row[num];
 
             x[idx] = schoolName;
             y[idx] = parseInt(numOfCourses);
@@ -20,8 +20,8 @@ async function getData(fileName) {
 
 }
 
-async function makeChart(idName, fileName) {
-    await getData(fileName);
+async function makeChart(idName, fileName, chartTitle, num2) {
+    await getData(fileName, num2);
 
     const ct = document.getElementById(idName);
     new Chart(ct, {
@@ -29,7 +29,7 @@ async function makeChart(idName, fileName) {
         data: {
             labels: x,
             datasets: [{
-                label: 'Data for Data',
+                label: chartTitle,
                 data: y,
                 borderWidth: 1,
                 borderColor: 'rgb(254, 181, 197)'
@@ -48,4 +48,9 @@ async function makeChart(idName, fileName) {
     });
 }
 
-makeChart("chart_one", "2016-2017_CS_Reports.csv");
+makeChart("chart_one", "2016-2017_CS_Reports.csv", "Number of CS Courses in Schools", 2);
+makeChart("chart_two", "2016-2017_CS_Reports.csv", "Number of AP CS Courses in Schools", 3);
+makeChart("chart_three", "2016-2017_CS_Reports.csv", "Number of Full CS Courses in Schools", 4);
+makeChart("chart_four", "2016-2017_CS_Reports.csv", "Number of Partial CS Courses in Schools", 5);
+
+
