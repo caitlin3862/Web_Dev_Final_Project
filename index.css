@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Rubik+Iso&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=VT323&display=swap');
 
+#logged-out-view {
+    display: none;
+}
+
+#logged-in-view {
+    display: none;
+}
+
 body {
     background-color: #F3CFC6;
     font-family: "Rubik Iso", sans-serif;
@@ -20,6 +28,12 @@ canvas {
 
 div {
     margin: 30px;
+}
+
+.container-two {
+    display: flex;
+    width:100%;
+    flex-direction: column;
 }
 
 .graph-containers {

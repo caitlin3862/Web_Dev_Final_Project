@@ -7,33 +7,55 @@
     <title>Charts</title>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Explore Datasets</a></li>
-            <li><a href="personal.html">Create Your Own</a></li> 
-        </ul>
-    </nav>
 
-    <h1 id="title">Explore Interesting Data Sets!</h1>
-    <div class="graph-containers">
-        <div class="chart" id="first-graph">
-            <h1>Chart One</h1>
-            <canvas id="chart_one"></canvas>
+    <section id="logged-out-view">
+        <div class="container">
+            <h1>Login</h1>
+            <div>
+              <input type="email" id="email" placeholder="Enter email" />
+            </div>
+            <div>
+              <input type="password" id="password" placeholder="Enter password" />
+            </div>
+            <div class="button-group">
+              <button id="loginButton" class="primary-btn">Login</button>
+              <button id="createAccountButton" class="secondary-btn">Create Account</button>
+            </div>
         </div>
-        <div class="chart" id="second-graph">
-            <h1>Chart Two</h1>
-            <canvas id="chart_two"></canvas>
+    </section>
+
+    <section id="logged-in-view">
+        <div class="container-two">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Explore Datasets</a></li>
+                    <li><a href="personal.html">Create Your Own</a></li> 
+                </ul>
+            </nav>
+
+            <h1 id="title">Explore Interesting Data Sets!</h1>
+            <div class="graph-containers">
+                <div class="chart" id="first-graph">
+                    <h1>Chart One</h1>
+                    <canvas id="chart_one"></canvas>
+                </div>
+                <div class="chart" id="second-graph">
+                    <h1>Chart Two</h1>
+                    <canvas id="chart_two"></canvas>
+                </div>
+                <div class="chart" id="third-graph">
+                    <h1>Chart Three</h1>
+                    <canvas id="chart_three"></canvas>
+                </div>
+                <div class="chart" id="fourth-graph">
+                    <h1>Chart Four</h1>
+                    <canvas id="chart_four"></canvas>
+                </div>
+            </div>
         </div>
-        <div class="chart" id="third-graph">
-            <h1>Chart Three</h1>
-            <canvas id="chart_three"></canvas>
-        </div>
-        <div class="chart" id="fourth-graph">
-            <h1>Chart Four</h1>
-            <canvas id="chart_four"></canvas>
-        </div>
-    </div>
+    </section>
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="index.js"></script>
+    <script type="module" src="index.js"></script>
 </body>
 </html>
